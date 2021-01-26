@@ -1,0 +1,1 @@
+program se pokrece iz command prompta (cmd) sa "node index.js" kad se nalazis u tome direktoriju
