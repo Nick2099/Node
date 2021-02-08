@@ -90,7 +90,7 @@ app.post("/", function(req, res) {
     res.send();
   };
 
-  setTimeout(Output, 1000); // without timedays function Output is executing before con.connect is finished! Have to find another way!!
+  setTimeout(Output, 1000); // without timeout function Output is executing before con.connect is finished! Have to find another way!!
                             // =====> Callback functions <======
 
   // if (forwarded == "login") {
