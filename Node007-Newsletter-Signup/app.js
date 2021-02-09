@@ -33,11 +33,11 @@ app.post("/", function(req, res) {
 
   const jsonData = JSON.stringify(data);
 
-  const url = "https://us1.api.mailchimp.com/3.0/lists/";
+  const url = "https://us1.api.mailchimp.com/3.0/lists/0a913594dc";
 
   const options = {
     method: "POST",
-    auth: "Nikica:"
+    auth: "Nikica:345cd25d49f89a6aa45c23741457a91b"
   };
 
   const request = https.request(url, options, function(response) {
@@ -66,8 +66,8 @@ app.post("/success", function(req, res) {
 });
 
 
-app.listen(3000, function() {
-  console.log("Server is running on port 3000 (localhost:3000)");
+app.listen(process.env.PORT || 3000, function() {       // 3000 => process.env.PORT - it'll work on default Heroku port
+  console.log("Server is running!");
 });
 
 
