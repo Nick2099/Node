@@ -35,7 +35,8 @@ app.post("/", function(req, res) {
   // res.writeHead(200, {'Content-Type': 'text/html'});
   // res.write("<h2>E-mail address: " + emailAddress + "</h2><h2>Password: " + password + "</h2><h2>Task: " + forwarded + "</h2");
 
-  let rawData = fs.readFileSync("C:/Programming/settings.json");
+  // let rawData = fs.readFileSync("C:/Programming/settings.json");
+  let rawData = fs.readFileSync(__dirname + "/settings.json");
   let infoLog = JSON.parse(rawData);
   // console.log(infoLog.database);
 
