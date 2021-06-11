@@ -1,3 +1,5 @@
+import emojipedia from "./emojipedia";
+
 var numbers = [3, 12, 2, 18, 5];
 
 //Map -Create a new array by doing something with each item in an array.
@@ -63,3 +65,11 @@ const fromFilter2 = numbers.findIndex(function(num) {
     return num>10;
 });
 console.log(fromFilter2);
+
+// Practice
+
+console.log(emojipedia);
+let tmpMeaning = emojipedia.map(function(x) {
+    return x.meaning.substring(0,99);
+});
+console.log(tmpMeaning);
