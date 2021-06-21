@@ -73,3 +73,32 @@ let tmpMeaning = emojipedia.map(function(x) {
     return x.meaning.substring(0,99);
 });
 console.log(tmpMeaning);
+
+// Arrow function
+
+function square(x) {
+  return x*x;
+}
+
+const newNumbers = numbers.map(square);
+console.log("Squares: ", newNumbers);
+
+// to make the code shorter we can that write as:
+
+const newNumbers2 = newNumbers.map(function(x) {
+  return x*x;
+})
+console.log("Squares2: ", newNumbers2);
+
+// same code written as an arrow function looks like this:
+
+const newNumbers3 = newNumbers2.map( x => {
+// in case we have two patameters we have to write them between ( )
+// const newNumbers3 = newNumbers2.map( (x, y) => {
+  return x*x;
+})
+console.log("Squares3: ", newNumbers3);
+
+// and this can be written even shorter as
+const newNumbers4 = newNumbers3.map( x => x/3);
+console.log("Numbers4: ", newNumbers4);
