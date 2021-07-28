@@ -10,6 +10,7 @@ function App() {
   function updateContact(event) {
     const {value, name} = event.target;
 
+    /*
     setContact(prevValue => {
       if (name === "fName") {
         return {
@@ -31,6 +32,22 @@ function App() {
         }
       };
     });
+    
+    can be replaced with following few lines
+    */
+
+    setContact(prevValue => {
+      return {
+        ...prevValue,
+        [name]: value
+      };
+    });
+
+    /*
+    which can be written even shorter as below
+
+    setContact(prevValue => ({...prevValue, [name]: value}));
+    */
   }
 
   return (
