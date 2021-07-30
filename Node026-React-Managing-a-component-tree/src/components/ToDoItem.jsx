@@ -8,6 +8,7 @@ function ToDoItem(props) {
         setIsDone((prevValue) => {
             return !prevValue;
         });
+        console.log(props);
     }
     
     return (

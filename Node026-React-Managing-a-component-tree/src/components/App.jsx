@@ -4,6 +4,7 @@ import ToDoItem from "./ToDoItem";
 function App() {
   const [inputText, setInputText] = useState("");
   const [items, setItems] = useState([]);
+  const [tmpItem, setTmpItem] = useState(0);
 
   function handleChange(event) {
     const newValue = event.target.value;
@@ -11,10 +12,16 @@ function App() {
   }
 
   function addItem() {
+    console.log("ulaz:", tmpItem);
     setItems(prevItems => {
-      return [...prevItems, inputText];
+      return [...prevItems, {no: tmpItem.toString(), text: inputText}];
     });
     setInputText("");
+    setTmpItem(tmpItem + 1);
+  }
+
+  function printOutItems() {
+    console.log(items);
   }
 
   return (
@@ -29,9 +36,12 @@ function App() {
         </button>
       </div>
       <div>
+        <button onClick={printOutItems}>Print out items to console</button>
+      </div>
+      <div>
         <ul>
           {items.map(todoItem => (
-            <ToDoItem text={todoItem} />
+            <ToDoItem key={todoItem.no} text={todoItem.text+" "+todoItem.no} />
           ))}
         </ul>
       </div>
