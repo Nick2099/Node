@@ -8,12 +8,15 @@ function ToDoItem(props) {
         setIsDone((prevValue) => {
             return !prevValue;
         });
-        console.log(props);
     }
     
     return (
         <div onClick={handleClick}>
-            <li style={{ textDecoration: isDone ? "line-through" : "none" }}>{props.text}</li>
+            <li style={{ textDecoration: isDone ? "line-through" : "none" }}>{props.text}
+                <button onClick={() => props.onDelete(props.id)}>
+                <span>Delete</span>
+                </button>
+            </li>
         </div>
     );
 }

@@ -12,16 +12,25 @@ function App() {
   }
 
   function addItem() {
-    console.log("ulaz:", tmpItem);
     setItems(prevItems => {
-      return [...prevItems, {no: tmpItem.toString(), text: inputText}];
+      return [...prevItems, {no: ("ToDoItem-"+tmpItem.toString()), text: inputText}];
     });
     setInputText("");
     setTmpItem(tmpItem + 1);
+    document.getElementById("inputText").focus();
   }
 
   function printOutItems() {
     console.log(items);
+  }
+
+  function deleteItem(id) {
+    console.log("Delete item with id = ", id);
+    setItems(prevItems => {
+      return prevItems.filter((item) => {
+        return item.no !== id;
+      });
+    });
   }
 
   return (
@@ -30,7 +39,7 @@ function App() {
         <h1>To-Do List</h1>
       </div>
       <div className="form">
-        <input onChange={handleChange} type="text" value={inputText} />
+        <input id="inputText" onChange={handleChange} type="text" value={inputText} />
         <button onClick={addItem}>
           <span>Add</span>
         </button>
@@ -41,7 +50,7 @@ function App() {
       <div>
         <ul>
           {items.map(todoItem => (
-            <ToDoItem key={todoItem.no} text={todoItem.text+" "+todoItem.no} />
+            <ToDoItem key={todoItem.no} id={todoItem.no} text={todoItem.text+" (id="+todoItem.no+")     "} onDelete={deleteItem} />
           ))}
         </ul>
       </div>
