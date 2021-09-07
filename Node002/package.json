@@ -9,6 +9,7 @@
   "author": "Nikica Dadic",
   "license": "ISC",
   "dependencies": {
+    "nodemon": "^2.0.12",
     "superheroes": "^3.0.0",
     "supervillains": "^3.0.0"
   }
