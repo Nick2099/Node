@@ -18,7 +18,7 @@ function App() {
   return (
     <div>
       <h1 className="heading">My Contacts</h1>
-      <Avatar img="https://media-exp1.licdn.com/dms/image/C4D03AQHtmMum5pt9UA/profile-displayphoto-shrink_200_200/0/1546863149926?e=1627516800&v=beta&t=YJ5t21a3O5q65VhoBz9ZfHFGPHEZOOFszZnweL61IZU" />
+      <Avatar img="https://blackhistorywall.files.wordpress.com/2010/02/picture-device-independent-bitmap-119.jpg" />
       {contacts.map(createCard)}
 
       {/*the line above is replacing all the line below  */}
